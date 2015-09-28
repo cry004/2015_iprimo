@@ -1,7 +1,7 @@
 @import "compass/reset"
 @import "compass/css3"
 $total : 100%
-$pdpBox : 1930px
+$pdpBox : 2570px
 @mixin margin($top,$right,$bottom,$left)
 	margin:  
 		top: $top
@@ -28,6 +28,13 @@ $pdpBox : 1930px
 	font:
 		size: 13px
 		family: '微軟正黑體'
+%middle
+	position: absolute
+	top: 0
+	bottom: 0
+	left: 0
+	right: 0
+	margin: auto
 
 a 
 	text-decoration: none
@@ -227,13 +234,12 @@ html
 			top: 463px
 			right: 221px
 	.sec3
-		border: 1px solid #000
+		padding-bottom: 0
 		.pdSlider
 			width: 840px
 			height: 360px
 			position: relative
 			margin: 20px auto
-			border: 1px solid #000
 			.pdBox
 				width: 640px
 				height: 329px
@@ -245,7 +251,7 @@ html
 					width: $pdpBox
 					height: 100%
 				.pdpp
-					width: $pdpBox/3
+					width: $pdpBox/4
 					height: 100%
 					position: relative
 					float: left
@@ -256,7 +262,7 @@ html
 			.pdnameBox
 				position: absolute
 				bottom: 0
-				left: 30px
+				left: 105px
 				width: 100%
 				.pdnames
 					position: absolute
@@ -272,22 +278,57 @@ html
 								cursor: pointer
 								&:hover
 									color: #fa6473
-			.arror
-				width: 30px
-				height: 52px
+		.pddisBox
+			position: relative
+			margin-top: 40px
+			.pddis
+				display: none
+				position: relative
+				width: 641px
+				margin: 0 auto
+				text-align: center
+				img
+					display: inline-block
+				&:first-child
+					display: block
+		.reserveBox
+			position: relative
+			margin: 40px auto
+			width: 365px
+			.tel 
 				position: absolute
-				top: 50%
-				margin-top: -26px
-				background: url('../img/arror.png') 0 0 no-repeat
-				cursor: pointer
-			.prepd
-				background-position: 0 0
 				left: 0
-			.nextpd
-				background-position: -30px 0
+				top: 0
+			.reserve
+				cursor: pointer
+				position: absolute
 				right: 0
-
-
+				top: 0
+				width: 137px
+				height: 34px
+				background: url('../img/reserve.png') 0 0 no-repeat
+				&:hover
+					background-position: 0 -35px
+		.arror
+			width: 30px
+			height: 52px
+			position: absolute
+			top: 50%
+			margin-top: -26px
+			background: url('../img/arror.png') 0 0 no-repeat
+			cursor: pointer
+		.prepd
+			background-position: 0 0
+			left: 0
+		.nextpd
+			background-position: -30px 0
+			right: 0
+	footer
+		position: relative
+		width: 100%
+		text-align: center
+		font: normal 13px/33px "Arial"
+		color: #555
 .ring1,.ring3
 	position: absolute
 	top: 95px
@@ -368,7 +409,7 @@ html
 			height: 33px
 			display: block
 			text-decoration: none
-			color: #b4afae
+			color: #777
 			cursor: pointer
 		span  
 			font: bold 13px/ 33px "微軟正黑體"
@@ -378,8 +419,33 @@ html
 			color: #4d403e
 		&:hover > .mc 
 			@include transform(scale(1,1))
-
-
+.close
+	position: absolute
+	right: 15px
+	top: 15px
+	cursor: pointer
+.cover
+	width: 100%
+	height: 100%
+	background: rgba(256,256,256,.6)
+	position: fixed
+	top: 0
+	left: 0
+	display: none
+	.videos
+		display: none
+		width: 570px
+		height: 370px
+		@extend %middle
+		border: 1px solid #000
+	#player
+		width: $total
+		height: $total
+	.vclose
+		position: absolute
+		right: -35px
+		top: -35px
+		cursor: pointer
 
 
 		
