@@ -1,0 +1,385 @@
+@import "compass/reset"
+@import "compass/css3"
+$total : 100%
+$pdpBox : 1930px
+@mixin margin($top,$right,$bottom,$left)
+	margin:  
+		top: $top
+		right: $right
+		bottom: $bottom
+		left: $left
+%pbox
+	position: absolute
+	font-size: 0
+	cursor: pointer
+	& div:hover > .vp img
+		@include transform(scale(1.1,1.1))
+		opacity: .9
+%dis
+	position: absolute
+	left: 0
+	bottom: -7px
+	width: 100%
+	text-align: center
+	font:
+		family: '微軟正黑體'
+%li
+	float: left
+	font:
+		size: 13px
+		family: '微軟正黑體'
+
+a 
+	text-decoration: none
+
+html
+	width: $total 
+	height: $total 
+	body
+		width: $total 
+		height: $total
+		min-width: 1000px
+		min-height: 600px 
+		background: #ffc7cd
+.wrapper 
+	width: $total 
+	height: $total
+	position: relative
+	top: 0
+	left: 0
+	.sec 
+		width: 1000px
+		height: 100%
+		position: relative
+		margin: 100px auto
+		padding-bottom: 100px
+		.bg 
+			position: absolute
+			left: 0
+	.sec1
+		.pagel
+			width: 313px
+			height: 373px
+			position: absolute
+			left: 121px
+			top: 118px
+			background: url('../img/pagel.png') 0 0 no-repeat
+			.gotoevent
+				top: 234px
+				left: 84px
+		.bigpbox
+			@extend %pbox
+			right: 106px
+			top: 110px
+			.vp
+				left: 29px
+				top: 29px
+			.play
+				position: absolute
+				top: 0
+				left: 0
+				bottom: 0
+				right: 0
+				margin: auto
+				width: 57px
+				height: 57px
+				background: url('../img/play.png') 0 0 no-repeat
+			.dis
+				@extend %dis
+				bottom: -7px
+				font:
+					size: 15px
+					weight: bold
+		.vp
+			position: absolute
+			img
+				position: absolute
+				@include transform-origin(50%)
+				@include transition(all 0.2s)
+				opacity: 1
+
+
+		.pbox
+			position: relative
+		.smallpbox
+			@extend %pbox
+			top: 393px
+			.vp
+				left: 11px
+				top: 11px
+			.dis
+				@extend %dis
+				bottom: -7px
+				font:
+					size: 12px
+		.smallpbox1
+			left: 507px
+		.smallpbox2
+			left: 636px
+		.smallpbox3
+			left: 768px
+	.sec2
+		.form
+			background:
+				position: 0 0
+				repeat: no-repeat
+			position: absolute
+			.textstyle 
+				width: 77px
+				height: 22px
+			.textstyle2
+				width: 292px
+				height: 22px
+			.selectstyle
+				width: 150px
+				height: 24px
+				@include appearance(none)
+			.textareastyle
+				width: 321px
+				height: 133px
+				resize: none
+			input,textarea,select
+				position: absolute
+				border: none 
+				background: transparent
+				outline: none 
+		.forml 
+			width: 338px
+			height: 423px
+			background:
+				image: url('../img/forml.png')
+			left: 101px
+			top: 80px
+			#mname
+				left: 69px
+				top: 97px
+			#mnick
+				left: 254px
+				top: 97px
+			#fname
+				left: 69px
+				top: 137px
+			#fnick
+				left: 254px
+				top: 137px
+			#date
+				left: 98px
+				top: 176px
+			#chance
+				left: 80px
+				top: 215px
+				width: 250px
+			#reason
+				left: 6px
+				top: 284px
+		.formr
+			width: 335px
+			height: 396px
+			background:
+				image: url('../img/formr.png')
+			right: 126px
+			top: 117px
+			#store
+				left: 136px
+				top: 35px
+			#tel
+				left: 38px
+				top: 121px
+			#email
+				left: 54px
+				top: 160px
+				width: 223px
+			#zone1
+				left: 39px
+				top: 199px
+				width: 92px
+			#zone2
+				left: 139px
+				top: 199px
+				width: 121px
+			#address
+				left: 38px
+				top: 230px
+			#readRule
+				left: 0
+				top: 275px
+		#pic_form
+			position: absolute
+			right: 260px
+			top: 107px
+			.file_bg 
+				width: 79px
+				height: 27px
+				background: url(../img/filebtn.png) 0 0 no-repeat
+				cursor: pointer
+				#pic::-webkit-file-upload-button 
+					visibility: hidden
+				#pic  
+					width: 79px
+					height: 27px
+					display: block
+					opacity: 0
+					cursor: pointer
+					position: absolute
+					left: 0
+					top: 0
+		.sendData
+			top: 463px
+			right: 221px
+	.sec3
+		border: 1px solid #000
+		.pdSlider
+			width: 840px
+			height: 360px
+			position: relative
+			margin: 20px auto
+			border: 1px solid #000
+			.pdBox
+				width: 640px
+				height: 329px
+				position: absolute
+				left: 50%
+				margin-left: -320px
+				overflow: hidden
+				.pdpBox
+					width: $pdpBox
+					height: 100%
+				.pdpp
+					width: $pdpBox/3
+					height: 100%
+					position: relative
+					float: left
+					div
+						position: absolute
+						left: 0
+						top: 0
+			.pdnameBox
+				position: absolute
+				bottom: 0
+				left: 30px
+				width: 100%
+				.pdnames
+					position: absolute
+					bottom: 0
+					ul
+						
+						li
+							@extend %li
+							color: #5e5657
+							a
+								color: #5e5657
+								margin: 0 17px
+								cursor: pointer
+								&:hover
+									color: #fa6473
+			.arror
+				width: 30px
+				height: 52px
+				position: absolute
+				top: 50%
+				margin-top: -26px
+				background: url('../img/arror.png') 0 0 no-repeat
+				cursor: pointer
+			.prepd
+				background-position: 0 0
+				left: 0
+			.nextpd
+				background-position: -30px 0
+				right: 0
+
+
+.ring1,.ring3
+	position: absolute
+	top: 95px
+	left: 448px
+.ring2,.ring4
+	position: absolute
+	top: 495px
+	left: 448px
+.gobtn
+	width: 145px
+	height: 44px
+	background-color: #f5a9b1
+	text-align: center
+	cursor: pointer
+	position: absolute
+	&:hover > .gobtn_b
+		width: 100%
+	.btit
+		position: relative
+		font:
+			size: 17px
+			family: '微軟正黑體'
+			weight: bold
+		line-height: 44px
+	.gobtn_b
+		width: 0
+		height: 100%
+		background: #f45566
+		position: absolute
+		left: 0
+		top: 0
+		@include transition(all 0.2s)
+.header
+	position: fixed
+	top: 0
+	width: 100%
+	.logo
+		position: absolute
+		left: 20px
+		top: 25px
+	.outlinks
+		position: absolute
+		right: 10px
+		top: 10px
+		li
+			@extend %li
+			color: #fa6473
+			a
+				color: #fa6473
+				margin: 0 15px
+				&:hover
+					text-decoration: underline
+.menu 
+	position: fixed
+	left: 0
+	top: 114px
+	.menu_bg 
+		position: relative
+		top: 0
+		left: 17px
+	.nav
+		width: 177px
+		height: 33px
+		position:relative
+		left: 0
+		margin-bottom: 9px
+		.mc 
+			width: 33px
+			height: 33px
+			position: absolute
+			left: 17px
+			margin-bottom: 9px
+			@include transform-origin(50%)
+			@include transform(scale(0,0))
+			@include transition(all 0.2s)
+		a 
+			width: 163px
+			height: 33px
+			display: block
+			text-decoration: none
+			color: #b4afae
+			cursor: pointer
+		span  
+			font: bold 13px/ 33px "微軟正黑體"
+			position: absolute
+			left: 60px
+		&:hover > a
+			color: #4d403e
+		&:hover > .mc 
+			@include transform(scale(1,1))
+
+
+
+
+		
