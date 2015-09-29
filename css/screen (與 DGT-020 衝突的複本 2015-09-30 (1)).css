@@ -1,0 +1,65 @@
+/*
+Error: Illegal nesting: Only properties may be nested beneath properties.
+        on line 503 of C:/Users/barbie.lee/Dropbox/Public/iprimo2/sass/screen.sass
+
+498: 	.sendDone
+499: 	display: none
+500: 		width: 600px
+501: 		height: 236px
+502: 		background: url('../img/sendDone.png') 0 0 no-repeat
+503: 		@extend %middle
+504: 		text-align: center
+505: 		.sendOk
+506: 			position: relative
+507: 			display: inline-block
+508: 			top: 140px
+
+Backtrace:
+C:/Users/barbie.lee/Dropbox/Public/iprimo2/sass/screen.sass:503
+C:/Download/fire.app.windows.v1.13.1/fire.app/lib/ruby/compass_1.0/sass-3.4.1/lib/sass/tree/visitors/check_nesting.rb:13:in `visit'
+C:/Download/fire.app.windows.v1.13.1/fire.app/lib/ruby/compass_1.0/sass-3.4.1/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+org/jruby/RubyArray.java:2412:in `map'
+C:/Download/fire.app.windows.v1.13.1/fire.app/lib/ruby/compass_1.0/sass-3.4.1/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+C:/Download/fire.app.windows.v1.13.1/fire.app/lib/ruby/compass_1.0/sass-3.4.1/lib/sass/tree/visitors/check_nesting.rb:49:in `visit_children'
+C:/Download/fire.app.windows.v1.13.1/fire.app/lib/ruby/compass_1.0/sass-3.4.1/lib/sass/tree/visitors/check_nesting.rb:48:in `visit_children'
+C:/Download/fire.app.windows.v1.13.1/fire.app/lib/ruby/compass_1.0/sass-3.4.1/lib/sass/tree/visitors/base.rb:38:in `visit'
+C:/Download/fire.app.windows.v1.13.1/fire.app/lib/ruby/compass_1.0/sass-3.4.1/lib/sass/tree/visitors/check_nesting.rb:15:in `visit'
+C:/Download/fire.app.windows.v1.13.1/fire.app/lib/ruby/compass_1.0/sass-3.4.1/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+org/jruby/RubyArray.java:2412:in `map'
+C:/Download/fire.app.windows.v1.13.1/fire.app/lib/ruby/compass_1.0/sass-3.4.1/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+C:/Download/fire.app.windows.v1.13.1/fire.app/lib/ruby/compass_1.0/sass-3.4.1/lib/sass/tree/visitors/check_nesting.rb:49:in `visit_children'
+C:/Download/fire.app.windows.v1.13.1/fire.app/lib/ruby/compass_1.0/sass-3.4.1/lib/sass/tree/visitors/check_nesting.rb:48:in `visit_children'
+C:/Download/fire.app.windows.v1.13.1/fire.app/lib/ruby/compass_1.0/sass-3.4.1/lib/sass/tree/visitors/base.rb:38:in `visit'
+C:/Download/fire.app.windows.v1.13.1/fire.app/lib/ruby/compass_1.0/sass-3.4.1/lib/sass/tree/visitors/check_nesting.rb:15:in `visit'
+C:/Download/fire.app.windows.v1.13.1/fire.app/lib/ruby/compass_1.0/sass-3.4.1/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+org/jruby/RubyArray.java:2412:in `map'
+C:/Download/fire.app.windows.v1.13.1/fire.app/lib/ruby/compass_1.0/sass-3.4.1/lib/sass/tree/visitors/base.rb:52:in `visit_children'
+C:/Download/fire.app.windows.v1.13.1/fire.app/lib/ruby/compass_1.0/sass-3.4.1/lib/sass/tree/visitors/check_nesting.rb:49:in `visit_children'
+C:/Download/fire.app.windows.v1.13.1/fire.app/lib/ruby/compass_1.0/sass-3.4.1/lib/sass/tree/visitors/check_nesting.rb:48:in `visit_children'
+C:/Download/fire.app.windows.v1.13.1/fire.app/lib/ruby/compass_1.0/sass-3.4.1/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Download/fire.app.windows.v1.13.1/fire.app/lib/ruby/compass_1.0/sass-3.4.1/lib/sass/tree/visitors/check_nesting.rb:57:in `visit_root'
+C:/Download/fire.app.windows.v1.13.1/fire.app/lib/ruby/compass_1.0/sass-3.4.1/lib/sass/tree/visitors/base.rb:36:in `visit'
+C:/Download/fire.app.windows.v1.13.1/fire.app/lib/ruby/compass_1.0/sass-3.4.1/lib/sass/tree/visitors/check_nesting.rb:15:in `visit'
+C:/Download/fire.app.windows.v1.13.1/fire.app/lib/ruby/compass_1.0/sass-3.4.1/lib/sass/tree/visitors/base.rb:24:in `visit'
+C:/Download/fire.app.windows.v1.13.1/fire.app/lib/ruby/compass_1.0/sass-3.4.1/lib/sass/tree/root_node.rb:35:in `css_tree'
+C:/Download/fire.app.windows.v1.13.1/fire.app/lib/ruby/compass_1.0/sass-3.4.1/lib/sass/tree/root_node.rb:20:in `render'
+C:/Download/fire.app.windows.v1.13.1/fire.app/lib/ruby/compass_1.0/sass-3.4.1/lib/sass/engine.rb:268:in `render'
+C:/Download/fire.app.windows.v1.13.1/fire.app/lib/ruby/compass_1.0/sass-3.4.1/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
+org/jruby/RubyMethod.java:136:in `call'
+file:/C:/Download/fire.app.windows.v1.13.1/fire.app/fire-app.jar!/hook/compass_patch.rb:131:in `update_stylesheet'
+C:/Download/fire.app.windows.v1.13.1/fire.app/lib/ruby/compass_1.0/sass-3.4.1/lib/sass/plugin/compiler.rb:215:in `update_stylesheets'
+org/jruby/RubyArray.java:1613:in `each'
+C:/Download/fire.app.windows.v1.13.1/fire.app/lib/ruby/compass_1.0/sass-3.4.1/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+C:/Download/fire.app.windows.v1.13.1/fire.app/lib/ruby/compass_1.0/sass-3.4.1/lib/sass/plugin/compiler.rb:470:in `on_file_changed'
+C:/Download/fire.app.windows.v1.13.1/fire.app/lib/ruby/compass_1.0/sass-3.4.1/lib/sass/plugin/compiler.rb:329:in `watch'
+org/jruby/RubyProc.java:271:in `call'
+C:/Download/fire.app.windows.v1.13.1/fire.app/lib/ruby/jruby/listen-1.1.6/lib/listen/listener.rb:236:in `on_change'
+C:/Download/fire.app.windows.v1.13.1/fire.app/lib/ruby/jruby/listen-1.1.6/lib/listen/listener.rb:271:in `initialize_adapter'
+org/jruby/RubyProc.java:271:in `call'
+C:/Download/fire.app.windows.v1.13.1/fire.app/lib/ruby/jruby/listen-1.1.6/lib/listen/adapters/polling.rb:48:in `poll_changed_directories'
+C:/Download/fire.app.windows.v1.13.1/fire.app/lib/ruby/jruby/listen-1.1.6/lib/listen/adapter.rb:289:in `start_poller'
+*/
+body:before {
+  white-space: pre;
+  font-family: monospace;
+  content: "Error: Illegal nesting: Only properties may be nested beneath properties.\A         on line 503 of C:/Users/barbie.lee/Dropbox/Public/iprimo2/sass/screen.sass\A \A 498: 	.sendDone\A 499: 	display: none\A 500: 		width: 600px\A 501: 		height: 236px\A 502: 		background: url('../img/sendDone.png') 0 0 no-repeat\A 503: 		@extend %middle\A 504: 		text-align: center\A 505: 		.sendOk\A 506: 			position: relative\A 507: 			display: inline-block\A 508: 			top: 140px"; }
