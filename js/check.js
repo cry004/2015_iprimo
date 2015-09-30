@@ -1,3 +1,7 @@
+document.getElementById("pic").onchange = function() {
+    document.getElementById("filename").textContent = this.value;
+};
+
 function checkStep1form() {
     /*check Step1 form data */
     mname = $("#q-text input[name='mname']");
@@ -120,8 +124,8 @@ function sendData() {
                         reason: reason.val(),
                         pic: pic_name,
                         store: $('#store option:selected').text(),
-                        tel: mname.val(),
-                        email: mname.val(),
+                        tel: tel.val(),
+                        email: email.val(),
                         addr: uCity.val() + uArea.val() + uAddr.val()
                     },
                     dataType: "json",
@@ -154,7 +158,7 @@ function sendData() {
 
 function showAlert() {
     $('.cover').fadeIn().find('.sendDone').show();
-    clearForm();
+    
 }
 //信箱格式判斷
 function checkEmail(email) {
@@ -206,7 +210,6 @@ function ValidEmail(emailtoCheck) {
 // }
 
 function clearForm() {
-
     $("#q-text input[name='mname']").val('');
     $("#q-text input[name='mnick']").val('');
     $("#q-text input[name='fname']").val('');
@@ -222,4 +225,5 @@ function clearForm() {
     $("#zone2").val('');
     $("#q-text input[name='address']").val('');
     document.getElementById("readRule").checked = false;
+    $('#filename').html('');
 }

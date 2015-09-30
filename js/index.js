@@ -1,10 +1,14 @@
 var initial = {
     initialFun: function() {
         animateFun.sliderFun();
-        $("#date").datepicker();
+        $("#date").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            yearRange: '1980:2015'
+        });
         init_address();
         $('.rbtn').eq(0).css({
-            'background-position': 0 + ' ' + -35 + 'px'
+            'background-position': 0 + ' ' + -36 + 'px'
         });
         $('.eventrule').eq(0).show();
 
@@ -13,19 +17,19 @@ var initial = {
 var animateFun = {
     slidepic: $('.pdpp').width(),
     navFun: function() {
-        $('.nav:first-child').on('click', function() {
+        $('.nav:first-child,.logo').on('click', function() {
             $('html,body').stop().animate({
                 scrollTop: 0
             }, 800, "easeInOutCubic");
         });
         $('.gotoevent').on('click', function() {
             $('html,body').stop().animate({
-                scrollTop: $('.sec2').offset().top - 100
+                scrollTop: $('.sec2').offset().top - 80
             }, 800, "easeInOutCubic");
         });
         $('.nav:nth-child(3)').on('click', function() {
             $('html,body').stop().animate({
-                scrollTop: $('.sec3').offset().top - 100
+                scrollTop: $('.sec3').offset().top - 80
             }, 800, "easeInOutCubic");
         });
         $('.gorule').on('click', function() {
@@ -84,9 +88,14 @@ var animateFun = {
             $('.prepd').show();
             if (now == 0) {
                 $('.prepd').hide();
+                $('.morepd a').attr('href', '//www.iprimo.tw/engagement/rings/');
+            }
+            if (now == 1) {
+                $('.morepd a').attr('href', '//www.iprimo.tw/marriage/rings/ ');
             }
             if (now == 2) {
                 $('.nextpd').hide();
+                $('.morepd a').attr('href', 'https://www.iprimo.tw/set/rings/');
             }
         }
     },
@@ -94,15 +103,15 @@ var animateFun = {
         animateFun.navFun();
         $('.bigpbox').on('click', function() {
             $('.cover').fadeIn().find('.videos').show();
-            player.loadVideoById('qZszKP4Qwbg');
+            player.loadVideoById('AwAjNs_q6Qs');
         });
         $('.smallpbox1').on('click', function() {
             $('.cover').fadeIn().find('.videos').show();
-            player.loadVideoById('bvC_0foemLY');
+            player.loadVideoById('n1pBOeIBdhw');
         });
         $('.smallpbox2').on('click', function() {
             $('.cover').fadeIn().find('.videos').show();
-            player.loadVideoById('bMpFmHSgC4Q');
+            player.loadVideoById('rqced_eBNtU');
         });
         $('.vclose').on('click', function() {
             player.stopVideo(0);
@@ -124,6 +133,10 @@ var animateFun = {
         });
         $('.sendOk').on('click', function() {
             $('.cover').fadeOut().find('.sendDone').removeAttr('style');
+            $('html,body').stop().animate({
+                scrollTop: $('.sec3').offset().top - 100
+            }, 800, "easeInOutCubic");
+            clearForm();
         });
     }
 }
