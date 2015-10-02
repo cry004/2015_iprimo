@@ -11,7 +11,23 @@ var initial = {
             'background-position': 0 + ' ' + -36 + 'px'
         });
         $('.eventrule').eq(0).show();
-
+        var scrollnow = 0;
+        $.Window.scroll(function(){
+            if(($(this).scrollTop()-$('.sec2').offset().top)>-100){
+                if(($(this).scrollTop()-$('.sec3').offset().top)<0 && scrollnow != 1){
+                    ga('send', 'pageview', '/propose');
+                    scrollnow = 1;
+                }
+                if(($(this).scrollTop()-$('.sec3').offset().top)>0 && scrollnow != 0){
+                    scrollnow = 0;
+                }
+            
+            }else{
+                if(($(this).scrollTop()-$('.sec1').offset().top)>0 && scrollnow != 0){
+                    scrollnow = 0;
+                }
+            }
+        });
     }
 }
 var animateFun = {
@@ -53,7 +69,7 @@ var animateFun = {
                         $('.pdpBox').animate({
                             'left': "-=" + animateFun.slidepic
                         }, 800, "easeInOutCubic", function() {
-                            console.log(now);
+                            // console.log(now);
                         });
                         now += 1;
                         checkNow(now)
@@ -65,7 +81,7 @@ var animateFun = {
                         $('.pdpBox').animate({
                             'left': "+=" + animateFun.slidepic
                         }, 800, "easeInOutCubic", function() {
-                            console.log(now);
+                            //console.log(now);
                         });
                         now -= 1;
                         checkNow(now)
@@ -88,14 +104,14 @@ var animateFun = {
             $('.prepd').show();
             if (now == 0) {
                 $('.prepd').hide();
-                $('.morepd a').attr('href', '//www.iprimo.tw/engagement/rings/');
+                $('.morepd a').attr({href:'//www.iprimo.tw/engagement/rings/',onclick:'GT("index", "clk", "/product_1");'});
             }
             if (now == 1) {
-                $('.morepd a').attr('href', '//www.iprimo.tw/marriage/rings/ ');
+                $('.morepd a').attr({href:'//www.iprimo.tw/marriage/rings/',onclick:'GT("index", "clk", "/product_2");'});
             }
             if (now == 2) {
                 $('.nextpd').hide();
-                $('.morepd a').attr('href', 'https://www.iprimo.tw/set/rings/');
+                $('.morepd a').attr({href:'https://www.iprimo.tw/set/rings/',onclick:'GT("index", "clk", "/product_3");'});
             }
         }
     },
@@ -103,19 +119,48 @@ var animateFun = {
         animateFun.navFun();
         $('.bigpbox').on('click', function() {
             $('.cover').fadeIn().find('.videos').show();
-            player.loadVideoById('AwAjNs_q6Qs');
+            if (player != null) {
+                player.destroy();
+                player = null;
+            }
+            changeYoutube('AwAjNs_q6Qs');
         });
         $('.smallpbox1').on('click', function() {
             $('.cover').fadeIn().find('.videos').show();
-            player.loadVideoById('n1pBOeIBdhw');
+            if (player != null) {
+                player.destroy();
+                player = null;
+            }
+            changeYoutube('rqced_eBNtU');
         });
         $('.smallpbox2').on('click', function() {
             $('.cover').fadeIn().find('.videos').show();
-            player.loadVideoById('rqced_eBNtU');
+            if (player != null) {
+                player.destroy();
+                player = null;
+            }
+           changeYoutube('n1pBOeIBdhw');
         });
+        function changeYoutube(id){
+            player = new YT.Player('player', {
+                height: '359',
+                width: '639',
+                videoId: id,
+                playerVars: {
+                    'autoplay': 1,
+                    'rel': 0,
+                    'showinfo': 0,
+                    'egm': 0,
+                    'wmode': 'transparent',
+                    'modestbranding': 1,
+                }
+            });
+        }
         $('.vclose').on('click', function() {
-            player.stopVideo(0);
-            player.seekTo(0);
+            if (player != null) {
+                player.destroy();
+                player = null;
+            }
             $('.cover').fadeOut().find('.videos').removeAttr('style');
         });
         $('.sendData').on('click', function() {
@@ -156,8 +201,8 @@ var PngFix = {
 $.Body = $('body');
 $.Window = $(window);
 $.Wrapper = $.Body.find('div.wrapper');
-animateFun.clickFun();
-$.Window.load(function() {
+    animateFun.clickFun();
+$(document).ready(function() {  
     PngFix.PngFixF($.Body);
     initial.initialFun();
 });
